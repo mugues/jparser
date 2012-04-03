@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"	debug="false">
+
+	<appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+		<param name="Threshold" value="DEBUG" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p  [%c{1}] %m %n" />
+		</layout>
+	</appender>
+
+	<!-- 
+	#note the %X{*} - this is how you fetch data from Mapped Diagnostic Context (MDC)
+	%X{multichannelId} %X{eventType}  %X{eventMessageId}
+	 -->	
+	<appender name="applicationAppender" class="org.apache.log4j.RollingFileAppender">
+		<param name="Threshold" value="DEBUG" />
+		<param name="File" value="${logfile.path}${file.separator}application.log" />
+		<param name="maxBackupIndex" value="10" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p %X{multichannelId} - %X{eventType} - %X{eventMessageId} [%c{1}] %m %n" />
+		</layout>
+	</appender>
+	
+	
+	
+	<logger name="it.alten" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="consoleAppender" />
+	</logger>
+	
+	<logger name="*" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="consoleAppender" />
+	</logger>
+	
+	<logger name="org.springframework" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="consoleAppender" />
+	</logger>
+	
+	
+</log4j:configuration>
