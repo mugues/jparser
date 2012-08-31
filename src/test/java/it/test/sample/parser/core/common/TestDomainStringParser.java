@@ -1,6 +1,7 @@
 package it.test.sample.parser.core.common;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import it.sample.parser.core.common.DomainStringParser;
 import it.sample.parser.domain.Anagrafica;
 
