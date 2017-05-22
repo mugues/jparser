@@ -3,6 +3,7 @@ package it.sample.parser.domain;
 import it.sample.parser.domain.annotation.DataEntity;
 import it.sample.parser.domain.annotation.DataField;
 import it.sample.parser.domain.annotation.RegexConstants;
+import it.sample.parser.domain.annotation.Verify;
 
 import java.io.Serializable;
 
@@ -13,12 +14,15 @@ public class Anagrafica implements Serializable{
 	private static final long serialVersionUID = -8832923173150893985L;
 
 	@DataField(startRangeOnline = 0, lengthOnline = 17)
+	@Verify
 	private String multichannelId;
 
 	@DataField(startRangeOnline = 17, lengthOnline = 30)
+	@Verify
 	private String cognome;
 	
 	@DataField(startRangeOnline = 47, lengthOnline = 30)
+	@Verify
 	private String nome;
 	
 	@DataField(startRangeOnline = 77, lengthOnline = 16)
