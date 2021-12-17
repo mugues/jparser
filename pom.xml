@@ -14,8 +14,8 @@
 		<org.slf4j.version>1.6.1</org.slf4j.version>
 		<com.googlecode.lambdaj.version>2.3.1</com.googlecode.lambdaj.version>
 		<commons-lang.version>2.5</commons-lang.version>
-		<commons-beanutils.version>1.8.3</commons-beanutils.version>		
-		<org.springframework.version>3.0.5.RELEASE</org.springframework.version>
+		<commons-beanutils.version>1.9.2</commons-beanutils.version>		
+		<org.springframework.version>3.2.0.RELEASE</org.springframework.version>
 	</properties>
 
 	<dependencies>
